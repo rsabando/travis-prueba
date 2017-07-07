@@ -3,10 +3,6 @@ php:
 - 5.0
 - 7.0
 
-
-env:
-- BD=pgsql
-
 script: 
 - phpunit test.php
 
