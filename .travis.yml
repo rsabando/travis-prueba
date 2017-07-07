@@ -7,18 +7,9 @@ php:
   - '7.0'
   - '7.1'
 
-before_install:
-  - npm install -g hexo
-
-install:
-  - npm install
-
-before_script:
+script:
  - git config --global user.name 'Ronny Sabando'
  - git config --global user.email 'rsabando@espol.edu.ec'
-
-script:
-- hexo generate
 
 after_success:
     - mkdir .deploy
