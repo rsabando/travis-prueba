@@ -1,21 +1,18 @@
 language: php
-
 php:
-  - '5.4'
-  - '5.5'
-  - '5.6'
-  - '7.0'
-  - '7.1'
+- 5.0
+- 7.0
 
-script:
- - git config --global user.name 'Ronny Sabando'
- - git config --global user.email 'rsabando@espol.edu.ec'
 
-after_success:
-    - mkdir .deploy
-    - cd .deploy
-    - git clone $DEPLOY_REPO . || (git init && git remote add origin $DEPLOY_REPO)
-    - cp -r ../public/* .
-    - git add -A .
-    - git commit -m 'Site updated by Travis'
-    - git push --force --quiet origin master
+env:
+- BD=pgsql
+
+script: 
+- phpunit Test.php
+
+
+notifications:
+  email:
+    - rsabando@espol.edu.ec
+    
+irc: "irc.freenode.org#yourfavouriteroomfortravis"
