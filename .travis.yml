@@ -11,8 +11,6 @@ env:
 before_install:
 - sudo apt-get update -q
 
-install: ./install-dependencies.sh
-
 before_script: true
 
 script: 
