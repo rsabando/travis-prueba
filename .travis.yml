@@ -1,9 +1,19 @@
 language: php
 
 dist: xenial
+
 php:
-- 5.0
 - 7.0
+
+env:
+- BD=pgsql
+
+before_install:
+- sudo apt-get update -q
+
+install: ./install-dependencies.sh
+
+before_script: true
 
 script: 
 - phpunit test.php
