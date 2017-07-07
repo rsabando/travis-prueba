@@ -7,20 +7,12 @@ php:
 env:
 - BD=pgsql
 
-before_install:
-- sudo apt-get update -q
-- sudo apt-get install ruby-full -y
-- gem install sass
-
-install: ./install-dependencies.sh
-
-before_script: true
-
 script: 
 - phpunit Test.php
 
 
 notifications:
   email:
-    - diegocarrera2000@gmail.com
+    - rsabando@espol.edu.ec
+    
 irc: "irc.freenode.org#yourfavouriteroomfortravis"
