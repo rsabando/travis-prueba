@@ -8,7 +8,7 @@ env:
 - BD=pgsql
 
 script: 
-- phpunit Test.php
+- phpunit test.php
 
 
 notifications:
